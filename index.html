@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principios de Transmisión de Datos - Teleproceso</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1,
+        h2,
+        h3 {
+            color: #007bff;
+        }
+        
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        
+        .concept {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 5px solid #28a745;
+            background-color: #e6ffe6;
+        }
+        
+        .protocol-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .protocol-table th,
+        .protocol-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .protocol-table th {
+            background-color: #007bff;
+            color: white;
+        }
+        /* Estilos específicos para el Índice Interactivo */
+        
+        #indice {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            border: 1px solid #ced4da;
+        }
+        
+        #indice ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #indice ul li {
+            margin-bottom: 8px;
+        }
+        
+        #indice ul li a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+        
+        #indice ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Principios de Transmisión de Datos en el Teleproceso 🚀</h1>
+        <p>Conectando sistemas, procesando información a distancia.</p>
+    </header>
+
+    <div class="container">
+
+        <section id="indice">
+            <h2>Índice de Contenidos</h2>
+            <ul>
+                <li><a href="#introduccion">Introducción al Teleproceso</a></li>
+                <li><a href="#principios-transmision">1. Principios Fundamentales de la Transmisión de Datos</a>
+                    <ul>
+                        <li><a href="#elementos">1.1. Elementos de un Sistema de Comunicación</a></li>
+                        <li><a href="#modos">1.2. Dirección del Flujo (Modos de Transmisión)</a></li>
+                        <li><a href="#sincronizacion">1.3. Tipos de Sincronización</a></li>
+                    </ul>
+                </li>
+                <li><a href="#señales-y-medio">2. Señales, Velocidad y Medios</a>
+                    <ul>
+                        <li><a href="#conversion">2.1. Señales y Conversión</a></li>
+                        <li><a href="#parametros">2.2. Parámetros Críticos</a></li>
+                    </ul>
+                </li>
+                <li><a href="#modelo-osi">3. La Estructura del Teleproceso: El Modelo OSI</a></li>
+                <li><a href="#conclusion">Conclusión</a></li>
+            </ul>
+        </section>
+
+        <section id="introduccion">
+            <h2>Introducción al Teleproceso</h2>
+            <p>El **Teleproceso** (o Teleprocesamiento) es la técnica de manejar información y ejecutar procesos informáticos de forma remota, utilizando una **red de comunicaciones**. Su esencia radica en la combinación de la **informática** y las **telecomunicaciones**
+                para permitir el acceso y la interacción con recursos informáticos (como bases de datos, aplicaciones y archivos) sin la necesidad de una presencia física en el lugar donde se alojan. Es la base operativa de casi toda la infraestructura
+                digital moderna.</p>
+        </section>
+
+        <section id="principios-transmision">
+            <h2>1. Principios Fundamentales de la Transmisión de Datos</h2>
+            <p>Para que el teleproceso funcione, los datos deben viajar de manera eficiente y confiable. Esto se rige por tres principios básicos:</p>
+
+            <div class="concept" id="elementos">
+                <h3>1.1. Elementos de un Sistema de Comunicación</h3>
+                <ul>
+                    <li><strong>Fuente (Emisor):</strong> Genera los datos a transmitir.</li>
+                    <li><strong>Transmisor:</strong> Codifica la señal para el medio (ej. un módem).</li>
+                    <li><strong>Medio de Transmisión:</strong> El camino físico o inalámbrico (ej. fibra óptica, ondas de radio).</li>
+                    <li><strong>Receptor:</strong> Decodifica la señal.</li>
+                    <li><strong>Destino:</strong> Recibe la información final.</li>
+                </ul>
+            </div>
+
+            <div class="concept" id="modos">
+                <h3>1.2. Dirección del Flujo (Modos de Transmisión)</h3>
+                <ul>
+                    <li><strong>Simplex:</strong> La transmisión ocurre en una sola dirección. (Ej.: Radio, televisión).</li>
+                    <li><strong>Half-Duplex (Semidúplex):</strong> La transmisión ocurre en ambas direcciones, pero solo una a la vez. Se turnan para hablar. (Ej.: Walkie-Talkie).</li>
+                    <li><strong>Full-Duplex (Dúplex):</strong> La transmisión es simultánea en ambas direcciones. Es el modo más común en redes modernas. (Ej.: Conversación telefónica, Internet de alta velocidad).</li>
+                </ul>
+            </div>
+
+            <div class="concept" id="sincronizacion">
+                <h3>1.3. Tipos de Sincronización</h3>
+                <p>Define cómo el receptor y el emisor se ponen de acuerdo sobre cuándo empieza y termina un bloque de bits.</p>
+                <ul>
+                    <li><strong>Asíncrona:</strong> Usa bits de **inicio y parada** para marcar el principio y el fin de cada carácter. Es más simple, pero añade sobrecarga.</li>
+                    <li><strong>Síncrona:</strong> Los datos se envían en grandes bloques (tramas) y el **reloj** de sincronización se comparte o se integra en los datos. Es más compleja, pero mucho más rápida.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="señales-y-medio">
+            <h2>2. Señales, Velocidad y Medios</h2>
+
+            <h3 id="conversion">2.1. Señales y Conversión</h3>
+            <ul>
+                <li><strong>Señal Digital:</strong> Discreta, utiliza dos niveles de voltaje para representar los bits (0 y 1). Es inmune al ruido, pero necesita una conversión para canales analógicos.</li>
+                <li><strong>Señal Analógica:</strong> Continua, varía suavemente. Puede usarse para datos digitales mediante **Modulación**.</li>
+                <li><strong>Modulación/Demodulación (Módem):</strong> El proceso esencial en el teleproceso tradicional. Convierte la señal digital de la computadora en analógica (Modulación) para el medio de transmisión, y viceversa (Demodulación).</li>
+            </ul>
+
+            <h3 id="parametros">2.2. Parámetros Críticos</h3>
+            <ul>
+                <li><strong>Velocidad de Transmisión (Bit Rate):</strong> Mide la cantidad de bits transmitidos por segundo. Se mide en **bps** (bits por segundo).</li>
+                <li><strong>Ancho de Banda:</strong> Es la capacidad de un canal para transportar datos. Un mayor ancho de banda permite una mayor velocidad de transmisión.</li>
+            </ul>
+        </section>
+
+        <section id="modelo-osi">
+            <h2>3. La Estructura del Teleproceso: El Modelo OSI</h2>
+            <p>El modelo de Interconexión de Sistemas Abiertos (OSI) es un marco conceptual que divide las tareas de comunicación en **siete capas**, garantizando la **interoperabilidad** entre sistemas de diferentes fabricantes.</p>
+
+            <table class="protocol-table">
+                <thead>
+                    <tr>
+                        <th>Capa</th>
+                        <th>Nombre</th>
+                        <th>Función en el Teleproceso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>7</td>
+                        <td>Aplicación</td>
+                        <td>Interfaz directa con el usuario (ej. HTTP, FTP).</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Presentación</td>
+                        <td>Formato de datos, cifrado y compresión.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Sesión</td>
+                        <td>Gestiona las conexiones (diálogos) entre dos aplicaciones.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Transporte</td>
+                        <td>Controla la entrega de extremo a extremo, maneja la fiabilidad y el control de flujo (**TCP/UDP**).</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Red</td>
+                        <td>Define el direccionamiento lógico (**IP**) y determina la mejor ruta (**Enrutamiento**).</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Enlace de Datos</td>
+                        <td>Controla el acceso al medio físico y detecta errores en la transmisión (dirección MAC).</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Física</td>
+                        <td>Transmisión pura de bits, especificaciones eléctricas y mecánicas (cables, conectores).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="conclusion">
+            <h2>Conclusión</h2>
+            <p>El teleproceso es el motor de la economía digital. Al comprender sus principios —desde la codificación de la señal en la capa física hasta la gestión de las sesiones en las capas superiores del modelo OSI—, se entiende cómo los sistemas distribuidos
+                y las redes de telecomunicaciones pueden trabajar conjuntamente para procesar información de forma global y en tiempo real. La eficiencia, la velocidad y la fiabilidad de la transmisión son claves para el éxito de cualquier sistema de
+                teleprocesamiento.</p>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
